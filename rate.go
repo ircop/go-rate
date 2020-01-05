@@ -59,3 +59,7 @@ func (r *RateLimiter) Try() (ok bool, remaining time.Duration) {
 	r.times.MoveToBack(frnt)
 	return true, 0
 }
+
+func (r *RateLimiter) GetLimit() int {
+	return r.limit
+}
